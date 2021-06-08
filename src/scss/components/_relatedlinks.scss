@@ -1,0 +1,26 @@
+/*
+-------------------------------------------
+RELATED LINKS AND FACT BOXES
+-------------------------------------------
+*/
+
+@import '_side-blocks';
+
+.related-links a {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1.8rem;
+  margin-bottom: 1.8rem;
+}
+.related-links a:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 740px) {
+  .related-links, .fact-box {
+    border-bottom: 1px solid #323232;
+    border-top: 1px solid #323232;
+    padding: 2.4rem 0;
+  }
+}

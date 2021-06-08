@@ -1,0 +1,212 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+
+
+.bg-black {
+  min-height: 51px;
+  padding: 6px 12px;
+  background-color: rgb(50,50,50);
+  color: #ffffff;
+  position: relative;
+  z-index: 30;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.logo {
+  background-image: url('//interactives.dallasnews.com/common/templates/v1.0/images/_dmn_logo.svg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: left center;
+  opacity: .85;
+  display: block;
+  height: 40px;
+  width: 155.4px;
+  float: left;
+  cursor: pointer;
+  @include transition(all, .25s, ease-out);
+  &:hover {
+      opacity: 1;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+#header-nav {
+    float: left;
+    margin-left: 20px;
+}
+
+.header-group {
+    float: left;
+    position: relative;
+    &:last-of-type {
+        margin-right: 0;
+    }
+    ul {
+        position: absolute;
+        top: calc(100% + 6px);
+        background-color: #323232;
+        min-width: 190px;
+        font-family: $sans;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: none;
+        padding-top: 14px;
+        &.open-list {
+            display: block;
+        }
+        li {
+            @include type(1.4rem, 1.8rem, 1.2rem);
+            padding-top: 6px;
+            margin: 0 20px 1.2rem;
+            a {
+                text-decoration: none;
+                color: white;
+                &:visited {
+                    color: white;
+                }
+                &:hover {
+                    color: $dmnblue;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    button {
+        position: relative;
+        top: 1px;
+        margin: 0 20px 0 20px;
+        background-color: rgba(255,255,255,0);
+        color: white;
+        font-family: $sans;
+        border: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 39px;
+        float: left;
+        padding: 0 18px 0 0;
+        &:before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 0px;
+            height: 0px;
+            border-left: 6px solid transparent;
+	        border-right: 6px solid transparent;
+	        border-top: 6px solid white;
+            right: 0;
+            top: 16px;
+            @include transition(all, .15s, ease-out);
+        }
+        &:after {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 0%;
+            background-color: $dmnblue;
+            height: 5px;
+            @include transition(all, .25s, ease-out);
+        }
+        &:hover {
+            cursor: pointer;
+            &:after {
+                width: 100%;
+            }
+        }
+        &:focus{
+            outline: none;
+        }
+        &.open-button {
+            color: $dmnblue;
+            &:before {
+                transform: rotate(-180deg);
+                border-top: 6px solid $dmnblue;
+            }
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 510px) {
+    #header-nav {
+        float: right;
+    }
+    .header-group {
+        &:first-of-type {
+            button {
+                margin-right: 10px;
+            }
+        }
+        button {
+            margin: 0 6px;
+        }
+        ul {
+            right: 0;
+        }
+    }
+    #header-account {
+        button {
+            text-indent: -9999px;
+            background-image: url("//interactives.dallasnews.com/common/templates/v1.0/images/identity.svg");
+            background-repeat: no-repeat;
+            background-size: 18px;
+            background-position: left center;
+            padding: 0 0;
+            margin-right: 0;
+            width: 20px;
+            &:before, &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+.logged-in {
+    display: none;
+}
+
+.subscribed .logged-in {
+    display: block;
+}
+
+.subscribed .logged-out {
+    display: none;
+}
+
+.subscribed #subscribe {
+  display: none;
+}
+
+#subscribe {
+    color: white;
+    float: right;
+    font-family: $sans;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    line-height: 39px;
+    @include transition(all, .15s, ease-out);
+    &:hover {
+        text-decoration: none;
+        color: darken(white, 10);
+    }
+}
+
+@media (max-width: 640px) {
+    #subscribe {
+        display: none;
+    }
+}

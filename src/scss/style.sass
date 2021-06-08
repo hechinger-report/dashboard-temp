@@ -1,0 +1,1845 @@
+@import 'base'
+@import 'header'
+@import 'footer'
+@import 'shuffle'
+// @import 'components/pullquotes'
+// @import 'components/side-blocks'
+// @import 'components/videos'
+
+
+
+
+/********* FONTS **********/
+
+$lato: 'Lato', sans-serif
+$mont: 'Montserrat', sans-serif
+
+/********* COLORS **********/
+
+$twitter: #00aced
+$facebook: #3b5998
+
+$gold: #daa520
+$green-1: #72b73b
+$green-2: #4c8c1c
+$green-3: #3e7317
+$black: #121212
+$white: #fff
+$gray: #ccc
+
+/********* MIXINS **********/
+
+@mixin transition($transition...)
+	-moz-transition:    $transition
+	-o-transition:      $transition
+	-webkit-transition: $transition
+	transition:         $transition
+
+@mixin transition-property($property...)
+	-moz-transition-property:    $property
+	-o-transition-property:      $property
+	-webkit-transition-property: $property
+	transition-property:         $property
+
+@mixin transition-duration($duration...)
+	-moz-transition-property:    $duration
+	-o-transition-property:      $duration
+	-webkit-transition-property: $duration
+	transition-property:         $duration
+
+@mixin transition-timing-function($timing...)
+	-moz-transition-timing-function:    $timing
+	-o-transition-timing-function:      $timing
+	-webkit-transition-timing-function: $timing
+	transition-timing-function:         $timing
+
+@mixin transition-delay($delay...)
+	-moz-transition-delay:    $delay
+	-o-transition-delay:      $delay
+	-webkit-transition-delay: $delay
+	transition-delay:         $delay
+
+// +transition(background-color 0.5s, width 0.5s)
+
+// PAGE HEADER
+
+body
+	//background-color: $green-2
+	color: $white !important
+	// position: fixed
+	// width: 100%
+
+#intro
+	background-color: $black
+	min-width: 100%
+	padding: 40px 0
+	border-top: 4px solid $green-1
+
+#page-header
+	width: 650px
+	margin: 20px auto
+	@media (max-width: 670px)
+		width: 99%
+	img
+		width: 650px
+		@media (max-width: 670px)
+			width: 95%
+			padding: 10px
+	.subhed
+		width: 650px
+		text-align: left
+
+#intro-btns
+	background-color: $black
+	color: $white
+	width: 100%
+	#btn-container
+		width: 650px
+		margin: 0 auto
+		padding-top: 25px
+		@media (max-width: 675px)
+			width: 100%
+		.btn
+			display: inline-block
+			color: $green-2
+			background-color: $white
+			text-align: center
+			font-size: 2.1rem
+			width: 32.5%
+			text-transform: uppercase
+			font-weight: 700
+			border-radius: 0 !important
+			border: 2px solid $black
+			@media (max-width: 675px)
+				width: 32%
+			&.selected-btn
+				border: 4px solid $green-2 !important
+				color: $white
+				background-color: $green-2
+			.inline-text
+				clear: both
+				text-transform: uppercase
+				font-weight: 400
+				font-size: 1.5rem
+				@media (max-width: 675px)
+					display: none
+			span
+				@media (max-width: 575px)
+					display: none
+	.fas
+		padding-top: 10px
+
+.section-title
+	color: $white
+	width: 95%
+	text-align: left
+	margin: 0 auto
+	padding: 20px 20px 0 0px
+	//text-transform: uppercase
+	font-weight: 400
+	font-family: $mont
+	font-size: 2rem
+	.number
+		width: 55px
+		height: 55px
+		padding: 5px 10px
+		text-align: center
+		border-radius: 50%
+		background-color: $white
+		color: $green-2
+		font-size: 3.1rem
+		font-weight: 700
+		@media (max-width: 760px)
+			display: none
+	.text
+		padding: 10px 0 0px 25px
+		margin-left: -20px
+		text-transform: uppercase
+		color: $white
+		position: relative
+		z-index: 15
+		font-weight: 500
+		letter-spacing: 1px
+
+#nav-breadcrumbs
+	margin: 0 auto
+	width: 850px
+ 	margin-top: 25px
+
+#breadcrumbs-two
+	margin: 0
+  padding: 0
+  list-style: none
+  overflow: hidden
+  width: 100%
+	li
+	  float: left
+	  margin: 0 0.5em 0 1em
+	a
+	  background: #ddd
+	  padding: 0.7em 1em
+	  float: left
+	  text-decoration: none
+	  color: #444
+	  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5)
+	  position: relative
+	  &:hover
+	    background: #99db76
+	  &::before
+	    content: ""
+	    position: absolute
+	    top: 50%
+	    margin-top: -1.5em
+	    border-width: 1.5em 0 1.5em 1em
+	    border-style: solid
+	    border-color: #ddd #ddd #ddd transparent
+	    left: -1em
+	  &:hover::before
+	    border-color: #99db76 #99db76 #99db76 transparent
+	  &::after
+	    content: ""
+	    position: absolute
+	    top: 50%
+	    margin-top: -1.5em
+	    border-top: 1.5em solid transparent
+	    border-bottom: 1.5em solid transparent
+	    border-left: 1em solid #ddd
+	    right: -1em
+	  &:hover::after
+	    border-left-color: #99db76
+	.current
+	  font-weight: bold
+	  background: none
+	  &:hover
+	    font-weight: bold
+	    background: none
+	  &::after, &::before
+	    content: normal
+
+#deck
+	width: 100%
+	font-size: 1.8rem
+	font-family: $serif
+	line-height: 1.5
+	display: inline-block
+	margin-top: 10px
+	padding-left: 60px
+	//border-right: 1px solid #eee
+	vertical-align: top
+	@media (max-width: 575px)
+		padding-left: 5%
+
+// ABOUT & DOWNLOAD SECTIONS
+
+.about-section, .download-section
+	width: 650px
+	margin: 0 auto
+	padding-top: 100px
+	display: none
+	min-height: 300px
+	@media (max-width: 715px)
+		width: 98%
+
+.download-section
+	p
+		font-size: 2rem
+		line-height: 1.4
+		// padding: 12px
+
+#download-csvs, #download-json
+	li
+		line-height: 2
+	a
+		font-size: 2rem
+		color: $white !important
+		text-decoration: underline
+		list-style-type: none
+
+.download-dropdown
+	width: 300px
+	// margin: 0 auto
+	margin-top: 15px
+	position: relative
+	display: block
+	margin-bottom: 15px
+	font-size: 2rem
+	font-family: $mont
+	font-weight: 700
+	@media (max-width: 1440px)
+		width: 65%
+		//padding-bottom: 50px
+	select
+		display: inline-block
+		width: 100%
+		cursor: pointer
+		padding: 10px 15px
+		outline: 0
+		// border: 1px solid $black
+		background-color: $white
+		border-radius: 0
+		//background: #e6e6e6
+		color: $black
+		appearance: none
+		-webkit-appearance: none
+		-moz-appearance: none
+		&::-ms-expand
+		  display: none
+		&:hover, &:focus
+		  cursor: pointer
+		&:disabled
+		  opacity: 0.5
+		  pointer-events: none
+
+#credits
+	width: 280px
+	margin: 0 auto
+	padding-top: 10px
+	display: inline-block
+	@media (max-width: 600px)
+		display: block !important
+	.credit
+		width: 180px
+		display: inline-block
+		text-align: left
+		margin: 20px 20px 20px 0
+
+.icon-credit
+	font-size: 1.3rem
+	line-height: 1.3
+	font-family: $lato !important
+	padding: 15px 0
+	text-align: left
+	width: 95%
+
+.about-social
+	color: $white !important
+	padding-bottom: 25px
+	> a
+		color: $white !important
+		text-decoration: none !important
+
+.methods-link
+	color: $white !important
+	text-decoration: underline
+
+.credit-desc
+	font-size: 1.8rem
+	color: $white
+	display: inline-block !important
+	width: 48%
+	vertical-align: center
+	padding-top: 30px
+	@media (max-width: 600px)
+		width: 100% !important
+		font-size: 1.6rem
+		display: block !important
+		padding-left: 5%
+	> p
+		padding-bottom: 10px
+
+#methodology
+	font-size: 1.8rem
+	color: $white
+	padding-top: 30px
+	@media (max-width: 600px)
+		width: 100% !important
+		font-size: 1.6rem
+		display: block !important
+		padding-left: 5%
+	> p
+		padding-bottom: 10px
+	> ul
+		list-style-type: circle
+		padding-left: 40px
+
+.source
+	color: $white !important
+	padding-top: 20px
+	line-height: 1.5 !important
+
+.section-header
+	font-family: $lato
+	width: 100%
+	display: block
+	font-size: 2.1rem
+	text-transform: uppercase
+	margin: 24px 0 15px 0
+	border-bottom: 1px solid gray
+	line-height: 1.5
+	padding: 3px 0px 3px 5px
+	word-spacing: 2.5px
+
+.graphic
+	margin-top: 24px
+
+.no-data-placeholder
+	padding: 12px
+	background-color: #eee
+	text-align: center
+	font-size: 2rem
+	font-weight: 700
+
+/* INTRO SEARCH
+
+.tt-icon
+	margin: 0
+	position: fixed
+	width: 70px
+	height: 55px
+	background-color: blue
+	right: calc(100% - 60px)
+
+.search-bar
+	margin: 0
+	width: 70px
+	height: 100px
+	display: inline-block
+	&:hover
+		cursor: pointer
+		opacity: 0.6
+	span
+		font-family: fontawesome
+		font-size: 2em
+		padding: 10px 0 0 25px
+		color: $white
+
+
+/* "Follow me" progress box
+
+#progress-box-mobile
+	position: absolute
+	top: 0
+	left: 0
+	background-color: $white
+	color: $black33
+	width: 100%
+	padding: 15px
+	display: block
+	z-index: 1001
+	@media (min-width: 1290px)
+		display: none !important
+	.your-schools
+		font-family: $mont
+		font-size: 1.4rem
+		text-transform: uppercase
+		//font-weight: 700
+		color: $black33
+		padding: 5px 0
+		text-align: right
+		border: none
+		span
+			font-weight: 700
+
+#progress-box
+	position: absolute
+	top: 0
+	left: 0
+	background-color: $white
+	color: $black33
+	width: 350px
+	padding: 35px
+	@media (max-width: 1290px)
+		display: none !important
+	//display: none
+	.your-selections
+		font-family: $mont
+		font-size: 1.6rem
+		font-weight: 700
+		text-transform: uppercase
+		padding-bottom: 5px
+		text-align: center
+		border-bottom: 1px dotted $black33
+	.your-schools
+		font-family: $mont
+		font-size: 1.4rem
+		text-transform: uppercase
+		//font-weight: 700
+		padding: 5px 0
+		text-align: right
+		border-top: 1px dotted $black33
+		span
+			font-weight: 700
+	ul
+		padding-top: 15px
+		> li
+			line-height: 2
+			font-family: $mont
+			font-size: 1.8rem
+			font-weight: 700
+			span
+				font-weight: 400
+				text-transform: uppercase
+				font-size: 1.4rem
+			// > div
+			// 	// font-family: "fontawesome"
+			// 	// content: "\f08d"
+			// 	color: $black33
+			// 	font-size: 2rem
+
+.error
+	background-color: red
+	color: $white !important
+	padding: 5px
+	font-size: 1.8rem
+	font-family: $lato
+	text-align: center
+	font-weight: 700
+
+.hide
+	display: none
+
+// SCHOOL PROFILE PAGE
+
+/* Search nav
+
+.search-nav
+	width: 100%
+
+.searchbox
+	position: relative
+	z-index: 1001
+	min-width: 50px
+	width: 0%
+	height: 50px
+	float: right
+	overflow: hidden
+	+transition(width 0.3s)
+
+.searchbox-input
+	top: 0
+	right: 0
+	border: 0
+	outline: 0
+	background-color: #dcddd8
+	width: 100%
+	height: 50px
+	margin: 0
+	padding: 0px 55px 0px 20px
+	font-size: 15px
+	color: $green-3
+	&::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder
+		color: $green-3
+
+.social-icon, .searchbox-icon,
+	width: 50px
+	height: 50px
+	display: block
+	position: fixed !important
+	z-index: 1001
+	top: 0
+	font-family: $lato
+	font-size: 22px
+	right: 0
+	padding: 0
+	margin: 0
+	border: 0
+	outline: 0
+	line-height: 50px
+	text-align: center
+	color: $white
+	background: $green-3
+	&:hover
+		cursor: pointer
+		background-color: $black121
+		+transition(background-color 0.3s)
+
+.searchbox-icon, .search-nav
+	@media (max-width: 700px)
+		display: none
+
+.searchbox-open
+  width: 100%
+
+.home-btn-icon
+	top: 52px
+	@media (max-width: 700px)
+		top: 0
+
+/* Share buttons
+
+.twitter-btn-icon
+	top: 104px
+
+.facebook-btn-icon
+	top: 156px
+
+.share-btns
+	display: inline-block
+	background-color: $green-1
+	color: $white
+	position: absolute
+	top: 0
+	font-size: 2.4rem
+	text-align: center
+	width: 40px
+	height: 35px
+
+#twitter-share
+	right: 43px
+
+#facebook-share
+	right: 0px
+
+/* School info
+
+.school-name
+	font-family: $lato
+	font-size: 4rem
+	font-weight: 700
+	line-height: 1.3
+	margin-top: 40px
+	padding: 10px 10px 3px 10px
+	text-align: center
+	display: block
+	margin-bottom: 10px
+
+.school-website
+	font-size: 2.2rem
+	font-family: $lato
+	line-height: 1
+	text-decoration: underline
+	margin-bottom: 45px
+
+#school-stats
+	width: 300px
+	padding: 50px
+	display: inline-block
+	margin-top: 0px
+	position: fixed
+	@media (max-width: 1300px)
+		display: none
+
+.stats-info, .mobile-stats-info
+	 font-size: 1.4rem
+	 text-transform: uppercase
+	 line-height: 1.5
+	 font-weight: 700
+	 color: $black
+	 padding-bottom: 10px
+	 span
+		 font-weight: 400
+
+.stats-group
+	border-bottom: 1px dotted $black33
+	padding: 15px 0
+	&:last-child
+		border: none
+
+#locator-map
+	margin-top: 15px
+	width: 250px
+	height: 250px
+	border: 1px solid $gray
+
+.city-state-label
+	color: $black33
+	text-transform: uppercase
+	font-size: 1.5rem
+	padding-top: 10px
+	font-weight: 700
+
+/* School stats for mobile
+
+#mobile-locator-map
+	width: 300px
+	height: 250px
+	border: 1px solid $gray
+
+.expander
+  $base-font-size: 1em !default
+  $base-line-height: 1.5em !default
+  $base-spacing: 1.5em !default
+  $action-color: $black33 !important
+  $dark-gray: #333 !default
+  $light-gray: #DDD !default
+  $base-font-color: $dark-gray !default
+  $expander-arrow-width: 1em
+  $expander-toggle-size: 2.1rem !important
+  $expander-toggle-arrow-size: $expander-toggle-size
+  $expander-toggle-margin: 1em
+  max-width: 600px
+  font-family: $lato
+  .expander-trigger
+    color: $black33 !important
+    cursor: pointer
+    display: block
+    font-size: $expander-toggle-size
+    margin-bottom: $expander-toggle-size
+    padding-bottom: $expander-toggle-size / 4
+    text-decoration: none
+    border: none
+    &::before
+      content: "\25BC"
+      font-size: $expander-arrow-width
+      margin-right: 0.5em
+  .expander-content
+    color: $base-font-color
+    padding-bottom: 25px
+  .expander-hidden
+    &::before
+      content: "\25BA"
+      font-size: $expander-arrow-width
+  .expander-hidden + .expander-content
+    display: none
+
+#mobile-stats-container
+	display: none
+	@media (max-width: 1300px)
+		display: block
+
+.stats-mobile
+	display: inline-block
+	vertical-align: top
+	@media (max-width:550px)
+		display: block
+	&:first-child
+		margin-right: 5px
+		width: 35%
+		@media (max-width:550px)
+			width: 100%
+
+/* Containers
+
+#school-profile-container
+	width: 600px
+	color: $black33
+	margin: 0 auto
+	@media (max-width: 900px)
+		width: 95%
+
+#school-well
+	background-color: $white
+	// margin-top: -50px
+	padding-top: 20px
+
+
+/* Price comparisons
+
+.cost-def
+	img
+		width: 65px !important
+		float: left
+		padding-right: 5px
+		@media (max-width: 600px)
+			display: none
+
+.cost-header
+	text-transform: uppercase
+	font-size: 3.2rem
+	line-height: 2
+	font-weight: 600
+	font-family: $lato
+	word-spacing: 2px
+	letter-spacing: 1px
+
+.price-left
+	width: 60%
+	display: inline-block
+	vertical-align: top
+	border-right: 1px solid $black
+	padding-right: 10px
+	@media (max-width: 900px)
+		width: 95%
+		border: none
+		display: block
+
+.price-right
+	width: 38%
+	display: inline-block
+	vertical-align: top
+	padding: 0px 0 0 10px
+	@media (max-width: 900px)
+		width: 95%
+		border: none
+		display: block
+
+.definition
+	//padding-top: 25px
+	font-size: 1.8rem
+	line-height: 1.3
+	clear: both
+	font-family: $lato
+	margin-bottom: 20px
+
+.definition-contd
+	font-size: 1.3rem
+	line-height: 1.3
+	padding: 8px 0 25px 0
+
+#sticker-price
+	width: 250px
+	text-align: left
+	font-size: 5.5rem
+	font-weight: 700
+	font-family: $lato
+	margin: 0 auto
+
+.fine-print
+	width: 230px
+	margin: 0 auto
+	text-align: left
+	font-size: 1.2rem
+	line-height: 1.4
+	text-transform: uppercase
+	//padding-top: 10px
+
+#price
+	border-bottom: 1px solid $black
+	border-top: 1px solid $black
+	padding: 10px 0
+
+.disclaimer
+	font-family: $lato
+	font-size: 2rem
+	line-height: 1.4
+	padding: 15px 25px
+	font-weight: 700
+	background-color: $green-3
+	margin: 25px 0
+	color: $white
+	p
+		padding-top: 15px
+	div
+		text-align: center
+		font-size: 3rem
+
+#sticker-price-chart-container, #grants-container, #loans-container, #aid-container
+	margin: 15px 0
+
+/* Expenses
+
+.expense
+	font-size: 1.8rem
+	font-family: $lato
+	line-height: 1.2
+	font-weight: 700
+	padding: 5px 0 15px 0
+	text-transform: uppercase
+	span
+		font-size: 2.5rem
+
+/* Living arrangements & residency
+
+#net-price
+	margin-top: 35px
+
+.family-income
+	width: 100%
+	display: inline-block
+	vertical-align: top
+
+/* Family income
+
+.net-span
+	font-weight: 700
+
+
+#family-income-table
+	margin-top: 5px
+
+#choose-family-income-bracket, #choose-year-family-income
+	min-width: 300px
+
+#price-bracket
+	text-transform: lowercase
+
+.show-table
+	// width: 90%
+	text-align: center
+	margin: 15px auto !important
+	font-size: 1.6rem
+	font-weight: 700
+	padding: 12px
+	color: $white
+	background-color: $green-2
+	transition: all 0.2s ease-in-out
+	&:hover
+		cursor: pointer
+		background-color: $black66
+
+
+
+.call-to-action
+	padding: 10px 0
+	font-size: 1.3rem
+	text-transform: uppercase
+	font-weight: 700
+
+.choose-variable
+	background-color: $white
+	min-width: 130px
+	font-size: 1.3rem
+	position: relative
+	display: inline-block
+	margin: 0 10px 20px 0
+	border-bottom: 2px solid $green-3
+	#choose-residency
+		width: 146px
+	select
+		display: inline-block
+		width: 100%
+		cursor: pointer
+		font-size: 1.8rem
+		font-weight: 700
+		font-family: $lato
+		padding: 10px 6px 10px 10px
+		outline: 0
+		border-radius: 0
+		appearance: none
+		-webkit-appearance: none
+		-moz-appearance: none
+		&::-ms-expand
+			display: none
+		&:disabled
+			opacity: 0.5
+			pointer-events: none
+
+.select-arrow
+	position: absolute
+	top: 15px
+	right: 12px
+	width: 2rem
+	height: 2rem
+	color: $black
+	font-size: 1.4rem
+	// border-top: 3px solid $black
+	// border-left: 3px solid $black
+	// transform: rotate(-140deg) skew(-10deg)
+	&:before
+		font-family: 'fontawesome'
+		content: '\f078'
+	&:hover
+		cursor: pointer
+
+/* Sortable table
+
+small
+  color: #808080
+
+button
+  bottom: 1px
+  cursor: pointer
+  margin-right: 8px
+  position: relative
+  padding: 4px 11px
+  border: 1px solid $green-3
+  background: none
+  border-radius: 3px
+  color: $green-3
+  font-size: 1em
+  transition: all .3s ease-in-out
+  &:hover
+    background: $green-3
+    color: $white
+
+/* Basic table
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+  -webkit-box-shadow: 0px 7px 6px -6px rgba(0, 0, 0, 0.28)
+  -moz-box-shadow: 0px 7px 6px -6px rgba(0, 0, 0, 0.28)
+  box-shadow: 0px 7px 6px -6px rgba(0, 0, 0, 0.28)
+  margin-bottom: 40px
+  margin-top: .5em
+  width: 100%
+  max-width: 100%
+  thead tr
+    border-bottom: 3px solid $green-3
+    color: $black
+  tfoot tr
+    border-top: 3px solid $green-3
+  thead th, tfoot th
+		font-weight: 700
+		background-color: $white
+		color: $black
+		font-size: 1.3rem
+		line-height: 1.8
+		padding: 15px 14px 13px 14px
+		position: relative
+		text-align: left
+		text-transform: uppercase
+  tbody tr
+    background-color: $white
+    &:hover
+      background-color: #eee
+      color: $black
+  th, td
+    border: 1px solid #bfbfbf
+    padding: 10px 14px
+    position: relative
+    vertical-align: middle
+
+caption
+  font-size: 1.111em
+  font-weight: 300
+  padding: 10px 0
+
+@media (max-width: 1024px)
+  table
+    font-size: .944444em
+
+@media (max-width: 767px)
+  table
+    font-size: 1em
+
+/* Responsive table full
+@media (max-width: 767px)
+  .table-responsive-full
+    box-shadow: none
+    thead, tfoot
+      display: none
+    tbody tr
+      -webkit-box-shadow: 0px 7px 6px -6px rgba(0, 0, 0, 0.28)
+      -moz-box-shadow: 0px 7px 6px -6px rgba(0, 0, 0, 0.28)
+      box-shadow: 0px 7px 6px -6px rgba(0, 0, 0, 0.28)
+      margin-bottom: 20px
+      &:last-child
+        margin-bottom: 0
+    tr
+      display: block
+    td
+      display: block
+      background-color: #fff
+      border-top: none
+      position: relative
+      padding-left: 50%
+      &:hover
+        background-color: #eee
+        color: #000
+        &:before
+          color: hsl(0, 0%, 40%)
+      &:first-child
+        border-top: 1px solid #bfbfbf
+        border-bottom: 3px solid $green-3
+        border-radius: 4px 4px 0 0
+        color: #000
+        font-size: 1.11111em
+        font-weight: bold
+      &:before
+        content: attr(data-label)
+        display: inline-block
+        color: hsl(0, 0%, 60%)
+        font-size: 14px
+        font-weight: normal
+        margin-left: -100%
+        text-transform: uppercase
+        width: 100%
+        white-space: nowrap
+
+@media (max-width: 360px)
+  .table-responsive-full td
+    padding-left: 14px
+    &:before
+      display: block
+      margin-bottom: .5em
+      margin-left: 0
+
+/* Sort table
+
+.sort-table-arrows
+	// float: right
+	transition: 0.3s ease
+	button
+		margin: 0
+		padding: 4px 8px
+
+.sort-table
+  th
+    &.income
+      width: 20% !important
+    &.price, &.pct-families, &.num-families
+      width: 15% !important
+  .income
+    font-weight: bold
+    small
+      font-weight: normal
+
+@media (max-width: 1024px)
+  .sort-table th
+    text-align: center
+  .sort-table-arrows
+    text-align: center
+    float: none
+    padding: 8px 0 0
+    position: relative
+    right: 0px
+    button
+      bottom: 0
+
+@media (max-width: 767px)
+  .sort-table
+    thead tr
+      border-bottom: none
+      display: block
+      margin: 10px 0
+      text-align: center
+      th.arranger
+        display: none
+    th
+      border-bottom: 1px solid #bfbfbf
+      border-radius: 4px
+      display: inline-block
+      font-size: .75em
+      line-height: 1
+      margin: 3px 0
+      padding: 10px
+      &.income, &.price, &.pct-families, &.num-families
+        width: 100px !important
+    td.income
+      &:before
+        display: none
+      letter-spacing: .03em
+      padding-left: 14px
+
+/* Living arrangements & residency
+
+.tagline
+	font-family: $lato
+	font-size: 1.6rem
+
+#choose-living-arr
+	width: 285px
+
+.calculated-living-residency, .calculated-net-price
+	//padding: 15px 0 0 0
+	min-width: 300px
+	border-bottom: 2px dotted $black
+	font-size: 1.6rem
+	text-align: center
+	margin: 15px auto
+	font-family: $lato
+	span
+		font-size: 4rem
+
+/* Grants & loans
+
+.legend-square
+	font-size: 1.5rem
+	padding: 5px 0
+	width: 300px
+	.key
+		width: 15px
+		height: 15px
+		margin-right: 5px
+		border-radius: 50%
+	.non-pell-line, .ft-retention-line, .sticker-price
+		background-color: #036888
+	.pell-line, .pt-retention-line, .net-price
+		background-color: #D2392A
+	.loans
+		background-color: #daa520
+
+#grants-loans
+	margin-top: 35px
+
+.switch-field
+	font-family: $mont
+	text-transform: uppercase
+	margin: 20px 0
+	overflow: hidden
+
+.switch-title
+  margin-bottom: 6px
+
+.switch-field
+  input
+    position: absolute !important
+    clip: rect(0, 0, 0, 0)
+    height: 1px
+    width: 1px
+    border: 0
+    overflow: hidden
+  label
+    float: left
+    display: inline-block
+    width: 160px
+    background-color: #e4e4e4
+    color: rgba(0, 0, 0, 0.6)
+    font-size: 1.4rem
+    font-weight: 700
+    text-align: center
+    text-shadow: none
+    padding: 6px 14px
+    border: 1px solid rgba(0, 0, 0, 0.2)
+    -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1)
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1)
+    -webkit-transition: all 0.1s ease-in-out
+    -moz-transition: all 0.1s ease-in-out
+    -ms-transition: all 0.1s ease-in-out
+    -o-transition: all 0.1s ease-in-out
+    transition: all 0.1s ease-in-out
+    &:hover
+      cursor: pointer
+  input:checked + label
+			background-color: $green-3
+			-webkit-box-shadow: none
+			box-shadow: none
+			color: $white
+  label
+    // &:first-of-type
+    //   border-radius: 4px 0 0 4px
+    // &:last-of-type
+    //   border-radius: 0 4px 4px 0
+
+.line
+  fill: none
+  stroke-width: 3px
+
+.overlay
+  fill: none
+  pointer-events: all
+
+.hover-line
+  stroke: $black66
+  stroke-width: 2px
+  stroke-dasharray: 3,3
+
+.axis-y.tick line
+  opacity: 0.2
+  stroke-dasharray: 3,3
+
+.axis-x .tick:nth-child(odd) text
+	visibility: hidden
+
+@media (min-width: 650px)
+	.axis-x .tick:nth-child(odd) text
+		visibility: visible
+
+
+.chart-tooltip
+	background-color: #fff
+	padding: 8px
+	outline: 1px solid #ccc
+	display: none
+	position: absolute
+
+
+/* Demographics and graduation rates
+
+.enrollment-stats-container, .grad-rate-stats-container
+	padding-top: 25px
+
+.enrollment-stat, .grad-rate-stat
+	font-weight: 700
+	font-family: $mont
+	font-size: 1.4rem
+	line-height: 1.6
+	text-transform: uppercase
+	// background-color: $chartBlue
+	// color: $white
+	padding: 15px 0 15px 0
+	display: inline
+	&:last-child
+		//border-top: 1px solid $black
+	.info
+		font-weight: 400
+		font-size: 2.5rem
+		text-align: center
+
+.note
+	padding: 15px 0
+	font-style: italic
+	font-size: 1.3rem
+
+#demographics, #grad-rates
+	margin-top: 35px
+
+#gender-bars, #age-bars
+	width: 90%
+	margin-top: 15px
+	padding: 0px
+
+.gender-bar, .age-bar
+	height: 25px
+	background-color: $green-1
+	&:before
+		content: attr(data-pct) '' '%'
+		color: $white
+		right: -5px
+		top: 2px
+		font-weight: 700
+		position: relative
+	&.small-num::before
+		color: $black33
+		right: -15px
+
+#enrollment-bars, #grad-rate-bars, #retention-bars
+	width: 90%
+	margin-top: 45px
+	padding: 0px
+	background-color: rgba(255,255,255,.75)
+
+.bar-group
+  margin-bottom: 1.9rem
+  padding-bottom: .9rem
+  &:last-of-type
+    margin-bottom: 0
+    padding-bottom: 0
+    border-bottom: none
+
+.pct-bar
+  height: 25px
+  background-color: $black235
+  position: relative
+
+.race-bar, .retention-bar
+  height: 25px
+  @include transition(all, .25s, ease-out)
+  background-color: $green-3
+  position: absolute
+  top: 0
+  left: 0
+
+.bar-label
+	@include type(13px, 15px, .3rem)
+	//font-weight: bold
+	text-transform: uppercase
+	line-height: 1.5
+	span
+		font-weight: 700
+		font-size: 1.3rem
+	&:first-of-type
+		padding-top: 0
+		border-top: none
+
+.bar-data
+	position: absolute
+	@include type(13px, 15px, 0)
+	padding-left: 5px
+	font-weight: bold
+	line-height: 2
+	@include transition(all, .25s, ease-out)
+
+@media (max-width: 450px)
+  .bar-group
+    width: 100%
+    float: none
+    margin-right: 0
+    padding-bottom: 1.2rem
+    border-bottom: 1px solid $black235
+    &:last-of-type
+      padding-bottom: 0
+      border-bottom: none
+
+.disabled-btn
+	opacity: 0.2
+
+// "FIND A SCHOOL" FILTERS
+
+#search-bar
+	text-align: center
+	padding-top: 20px
+	width: 650px
+	margin: 0 auto
+	@media (max-width: 575px)
+		width: 100%
+
+.flexbox-container
+	width: 650px
+	margin: 0 auto
+	display: flex
+	&.wrap
+		flex-wrap: wrap
+
+.box
+	height: 20px
+	max-width: 225px
+	margin: 10px auto
+
+.results-box
+	position: absolute
+	top: 0
+	right: 0
+	height: 20px
+	max-width: 225px
+
+.dropdown-group
+	text-align: left
+
+.dropdown-container
+	display: inline-block
+	vertical-align: top
+	margin: 10px 10px 0px 0px
+	max-width: 240px
+	position: relative
+	z-index: 40
+
+button#search, button#results-search, button#filter-search, button#download, button#search-again
+	background: #3e7317
+	border-radius: 0
+	border: 0
+	color: white
+	text-shadow: none
+	font-size: 1.8rem
+	font-family: $lato
+	margin: 0 auto !important
+	//margin: 20px 10px
+	height: 53px
+	padding: 0 40px
+	outline: 0
+	//clear: both
+	position: relative
+	display: inline-block
+	//left: 45%
+	z-index: 20
+	//bottom: 3%
+	//position: relative
+	overflow: hidden
+	-webkit-transition: all 0.3s
+	-moz-transition: all 0.3s
+	transition: all 0.3s
+	cursor: pointer
+	span
+		display: block
+		-webkit-transition: all 0.3s
+		-moz-transition: all 0.3s
+		transition: all 0.3s
+		-webkit-transform: translateY(0%)
+		-moz-transform: translateY(0%)
+		-ms-transform: translateY(0%)
+		-o-transform: translateY(0%)
+		transform: translateY(0%)
+	// &:before
+	// 	// content: "\f002"
+	// 	// font-family: "fontawesome"
+	// 	position: absolute
+	// 	top: -100%
+	// 	left: 0
+	// 	height: 100%
+	// 	width: 100%
+	// 	line-height: 53px
+	// 	-webkit-transition: top 0.3s
+	// 	-moz-transition: top 0.3s
+	// 	transition: top 0.3s
+	&:active
+		background-color: #72b73b
+
+button#download
+	display: block
+	float: left !important
+
+.filter-search
+	max-width: 250px
+	word-spacing: 2px
+	margin-bottom: 55px
+
+@media (max-width: 600px)
+  button#search, button#filter-search, button#search-again
+    display: block
+    width: 90%
+    margin: 10px auto
+
+// FIND A SCHOOL FORM
+
+.form-section
+	background-color: $green-2
+	width: 750px
+	margin: 0 auto
+	border-bottom: 1px dotted $white
+	// @media (max-width: 1440px)
+	// 	width: 95%
+	@media (max-width: 1440px)
+		width: 900px
+		float: right
+		clear: both
+		// margin-right: 70px
+	@media (max-width: 1290px)
+		float: none
+		margin: 0
+		width: 100%
+#school-size-section, #school-results
+	border: 0
+
+#school-map-section
+	margin-top: 100px
+
+
+/* Map styles
+
+.map-container
+	width: 600px
+	margin: 0 auto
+	display: inline-block
+	//float: left
+	@media (max-width: 1290px)
+		display: none
+
+#map
+	width: 600px
+	height: 600px
+	margin: -105px 0 0 60px
+	@media (max-width: 1290px)
+		margin-left: 0
+		width: 500px
+
+path
+	&:hover
+		cursor: pointer
+  	fill: #ff7409
+
+.state-selected
+  fill: $white
+
+
+.map-dropdown
+	width: 600px
+	margin: 0 auto
+	margin-top: 65px
+	position: relative
+	display: block
+	margin-bottom: 15px
+	font-size: 2rem
+	font-family: $mont
+	font-weight: 700
+	@media (max-width: 1440px)
+		width: 95%
+		padding-bottom: 50px
+	select
+		display: inline-block
+		width: 100%
+		cursor: pointer
+		padding: 10px 15px
+		outline: 0
+		// border: 1px solid $black
+		background-color: $white
+		border-radius: 0
+		//background: #e6e6e6
+		color: $black
+		appearance: none
+		-webkit-appearance: none
+		-moz-appearance: none
+		&::-ms-expand
+		  display: none
+		&:hover, &:focus
+		  cursor: pointer
+		&:disabled
+		  opacity: 0.5
+		  pointer-events: none
+
+.down-arrow
+  position: absolute
+  top: 23px
+  right: 35px
+  width: 0
+  height: 0
+  pointer-events: none
+  border-style: solid
+  border-width: 9px 9px 0 9px
+  border-color: $black transparent transparent transparent
+
+
+/*Checkboxes styles
+
+.checkbox-wrapper
+	// width: 600px
+	margin: 0 auto
+
+.boxes
+  margin: auto
+  padding: 50px
+  //background: #484848
+
+input[type="checkbox"]
+	display: none
+	+ label
+		display: block
+		position: relative
+		padding-left: 35px
+		margin-bottom: 20px
+		font-family: $mont
+		font-size: 1.8rem
+		color: $white
+		font-weight: 400
+		cursor: pointer
+		-webkit-user-select: none
+		-moz-user-select: none
+		-ms-user-select: none
+		&:last-child
+			margin-bottom: 0
+		&:before
+			content: ''
+			display: block
+			width: 20px
+			height: 20px
+			border: 3px solid $white
+			position: absolute
+			left: 0
+			top: 0
+			opacity: .6
+			-webkit-transition: all .12s, border-color .08s
+			transition: all .12s, border-color .08s
+	&:checked + label:before
+	  width: 10px
+	  top: -5px
+	  left: 5px
+	  border-radius: 0
+	  opacity: 1
+	  border-top-color: transparent
+	  border-left-color: transparent
+	  -webkit-transform: rotate(45deg)
+	  transform: rotate(45deg)
+
+.info-btn
+	color: $white
+	font-size: 1.6rem
+	vertical-align: top
+
+[data-tooltip]
+	display: inline-block
+	position: relative
+	cursor: help
+	padding: 4px
+	text-transform: none
+	&:before
+		content: attr(data-tooltip)
+		display: none
+		position: absolute
+		background: $black33
+		color: $white
+		padding: 8px
+		font-size: 1.3rem
+		line-height: 1.4
+		width: 200px
+		text-align: left
+		border-radius: 4px
+
+/* Tooltip styling
+
+/* Dynamic horizontal centering
+
+[data-tooltip-position="top"]:before, [data-tooltip-position="bottom"]:before
+  left: 50%
+  -ms-transform: translateX(-50%)
+  -moz-transform: translateX(-50%)
+  -webkit-transform: translateX(-50%)
+  transform: translateX(-50%)
+
+/* Dynamic vertical centering
+
+[data-tooltip-position="right"]:before, [data-tooltip-position="left"]:before
+  top: 50%
+  -ms-transform: translateY(-50%)
+  -moz-transform: translateY(-50%)
+  -webkit-transform: translateY(-50%)
+  transform: translateY(-50%)
+
+[data-tooltip-position="top"]:before
+  bottom: 100%
+  margin-bottom: 6px
+
+[data-tooltip-position="right"]:before
+  left: 100%
+  margin-left: 6px
+
+[data-tooltip-position="bottom"]:before
+  top: 100%
+  margin-top: 6px
+
+[data-tooltip-position="left"]:before
+  right: 100%
+  margin-right: 6px
+
+/* Tooltip arrow styling/placement
+
+[data-tooltip]:after
+  content: ''
+  display: none
+  position: absolute
+  width: 0
+  height: 0
+  border-color: transparent
+  border-style: solid
+
+/* Dynamic horizontal centering for the tooltip
+
+[data-tooltip-position="top"]:after, [data-tooltip-position="bottom"]:after
+  left: 50%
+  margin-left: -6px
+
+/* Dynamic vertical centering for the tooltip
+
+[data-tooltip-position="right"]:after, [data-tooltip-position="left"]:after
+  top: 50%
+  margin-top: -6px
+
+[data-tooltip-position="top"]:after
+  bottom: 100%
+  border-width: 6px 6px 0
+  border-top-color: $black33
+
+[data-tooltip-position="right"]:after
+  left: 100%
+  border-width: 6px 6px 6px 0
+  border-right-color: $black33
+
+[data-tooltip-position="bottom"]:after
+  top: 100%
+  border-width: 0 6px 6px
+  border-bottom-color: $black33
+
+[data-tooltip-position="left"]:after
+  right: 100%
+  border-width: 6px 0 6px 6px
+  border-left-color: $black33
+
+/* Show the tooltip when hovering
+
+[data-tooltip]:hover
+  &:before, &:after
+    display: block
+    z-index: 50
+
+.info-underline
+	text-decoration: 2px dotted $white
+
+.striped-list
+	list-style-type: none
+	margin-top: 50px
+	padding: 0
+	width: 650px
+	@media (max-width: 650px)
+		width: 95%
+	> li
+		border-bottom: 1px solid rgb(221, 221, 221)
+		padding: 6px 6px 6px 15px
+		&:nth-of-type(even)
+			background-color: #fff
+			color: black
+		&:nth-of-type(odd)
+			background-color: #eee
+			color: $white
+		&:last-child
+			border-bottom: none
+		&:hover
+			cursor: pointer
+			opacity: 0.7
+		> a:link, a:visited, a:active, a:hover
+			text-decoration: none
+			color: $black33 !important
+
+#search-results
+	margin: 0 auto
+	width: 650px
+	display: none
+	@media (max-width: 1300px)
+		width: 95%
+	.results-cta
+		// padding: 10px
+		font-size: 2rem
+		font-style: italic
+		font-weight: 700
+		@media (max-width: 1300px)
+			width: 95%
+		//text-decoration: underline
+
+// @media (max-width: 650px)
+// 	.striped-list
+// 		width: 95%
+
+// AUTOCOMPLETE
+
+#tags
+	width: 970px
+	@media (max-width: 670px)
+		width: 90%
+
+#tags-results
+	width: 300px
+	@media (max-width: 670px)
+		width: 90%
+
+
+.ui-autocomplete
+	overflow-x: hidden
+	overflow-y: auto
+	height: 150px
+	@media (max-width: 670px)
+		width: 90%
+
+.ui-widget
+	color: $black
+	width: 650px
+  max-height: 100px
+  overflow-y: scroll
+	margin-top: 15px
+  /* prevent horizontal scrollbar
+  overflow-x: hidden
+  /* add padding to account for vertical scrollbar
+  // padding-right: 20px
+	@media (max-width: 575px)
+		width: 90%
+	input
+		width: 650px !important
+		margin: 0 auto
+		height: 45px
+		padding-left: 10px
+		font-size: 1.8rem !important
+		@media (max-width: 575px)
+			width: 90%
+
+.ui-menu-item
+	font-size: 1.6rem
+	line-height: 1.3
+
+.or
+	padding-top: 20px
+	font-size: 2rem
+	font-weight: bold
+
+#results
+	height: 20px
+	display: block
+	font-size: 1.8rem
+	text-align: center
+	text-transform: uppercase
+	font-weight: 400
+
+
+// NAVIGATION
+
+.fixed-nav
+	background-color: blue
+	width: 300px
+	position: fixed
+	height: 100vh
+	display: inline-block
+
+
+.navbar
+  padding: 15px 10px
+  background: #fff
+  border: none
+  border-radius: 0
+  margin-bottom: 40px
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1)
+
+.navbar-btn
+  box-shadow: none
+  outline: none !important
+  border: none
+
+.line
+  width: 100%
+  height: 1px
+  border-bottom: 1px dashed #ddd
+  margin: 40px 0
+
+i, span
+  display: inline-block
+
+
+/***** CLEARFIX *****/
+
+.group:after
+	visibility: hidden
+	display: block
+	content: ""
+	clear: both
+	height: 0
+
+* html .group
+	zoom: 1
+
+*:first-child+html .group
+	zoom: 1

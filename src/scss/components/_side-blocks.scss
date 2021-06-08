@@ -1,0 +1,50 @@
+/*
+-------------------------------------------
+SIDE BLOCKS & INLINE BLOCKS
+-------------------------------------------
+*/
+
+.side-block {
+  max-width: 400px;
+  width: 100%;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
+}
+.side-block p {
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+.side-block h4, .side-block h5, .side-block h6 {
+  font-weight: bold;
+  color: #212121;
+}
+.side-block img {
+  margin: 0 0 .3rem 0;
+  width: 100%;
+}
+.right-block {
+  float: right;
+  margin: 0 0 4.8rem 4.8rem;
+}
+.left-block {
+  float: left;
+  margin: 0 4.8rem 4.8rem 0;
+}
+p.source {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #797470;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
+}
+
+@media (max-width: 740px) {
+  .right-block, .left-block {
+    float: none;
+    margin: 4.8rem auto 4.8rem;
+    width: 100%;
+    max-width: 650px;
+  }
+  .graphic-block {
+    max-width: 400px;
+  }
+}

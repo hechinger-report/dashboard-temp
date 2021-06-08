@@ -1,0 +1,176 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+
+
+.interactive-footer {
+  min-height: 97px;
+  padding-bottom: 24px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: block;
+}
+
+.footer-content {
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+    img {
+        max-width: 225px;
+    }
+}
+
+.footer-social {
+    float: right;
+    position: relative;
+    top: 5px;
+    li {
+        margin-right: 5px;
+        float: left;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+    a {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    #footer-facebook, #footer-twitter {
+        background: url("//interactives.dallasnews.com/common/templates/v1.0/images/socialSprites.svg");
+        background-size: 120px 60px;
+    }
+    #footer-twitter {
+        background-position: 90px 0px;
+    }
+    #footer-instagram, #footer-youtube {
+        background: url("//interactives.dallasnews.com/common/templates/v1.0/images/socialSprites2.svg");
+        background-size: 60px 60px;
+    }
+    #footer-youtube {
+        background-position: 30px 0px;
+    }
+    #footer-facebook:hover {
+        background-position: 120px 30px;
+    }
+    #footer-twitter:hover {
+        background-position: 90px 30px;
+    }
+    #footer-instagram:hover {
+        background-position: 60px 30px;
+    }
+    #footer-youtube:hover {
+        background-position: 30px 30px;
+    }
+}
+
+.footer-links {
+    width: calc(100% - 65px);
+    margin-left: 65px;
+    border-top: 1px solid rgb(235,235,235);
+    position: relative;
+    top: -15px;
+    padding-top: 10px;
+}
+
+.interactive-footer a {
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: normal;
+  font-weight: bold;
+  color: rgb(50,50,50);
+  cursor: pointer;
+}
+
+.interactive-footer p {
+    font-family:"PT Serif", Georgia, serif;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(121,121,121);
+    float: right;
+}
+
+.footer-links a {
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+
+.footer-links a:hover {
+    text-decoration: none;
+    color: $dmnblue;
+}
+
+.footer-links li {
+    float: left;
+    margin-right: 22px;
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 1150px) {
+    .footer-content {
+        img {
+            width: 150px;
+        }
+    }
+    .footer-social {
+        top: 5px;
+    }
+    .footer-links {
+        width: 100%;
+        margin-left: 0;
+        top: 5px;
+        li {
+            margin-right: 11px;
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .footer-links ul {
+        width: 100%;
+        display: block;
+    }
+    .interactive-footer p {
+        clear: both;
+        float: none;
+        padding-top: 1.2rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .footer-links li {
+        width: 33%;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .footer-content {
+        img {
+            width: 125px;
+            position: relative;
+            top: 5px;
+        }
+    }
+    .footer-links {
+        top: 10px;
+    }
+    .footer-links li {
+        width: 50%;
+    }
+    .interactive-footer p {
+        letter-spacing: -.2px;
+    }
+}
+
+@media print {
+  .bg-black {
+    position: relative;
+  }
+}

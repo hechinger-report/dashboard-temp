@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "rules": {
+    "no-console": 0
+  },
+  "env": {
+    "browser": true
+  },
+  "extends": "eslint:recommended",
+  "plugins": [
+    "es6-recommended"
+  ]
+}

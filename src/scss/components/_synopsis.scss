@@ -1,0 +1,25 @@
+/*
+-------------------------------------------
+SYNOPSIS BOXES
+-------------------------------------------
+*/
+
+.synopsis {
+  border-bottom: 1px solid #323232;
+  padding-bottom: 2.4rem;
+}
+
+.synopsis h6 {
+  margin-bottom: .9rem;
+  font-weight: bold;
+  color: #212121;
+  text-transform: uppercase;
+}
+.synopsis p {
+  font-style: italic;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  margin-bottom: .9rem;
+  color: $black66;
+  cursor: pointer;
+}

@@ -1,0 +1,61 @@
+/*
+-------------------------------------------
+BREAKOUT MODULES
+-------------------------------------------
+*/
+
+.breakout-module {
+  margin: 4.8rem auto;
+  width: 95%;
+}
+.breakout-module h5 {
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-weight: bold;
+}
+.breakout-module img {
+  margin-bottom: .3rem;
+  width: 100%;
+}
+.breakout-module p {
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+.breakout-box {
+  float: left;
+  margin-right: 2%;
+}
+.breakout-box:last-child {
+  margin-right: 0;
+}
+.two-across .breakout-box {
+  width: 49%;
+}
+.three-across .breakout-box {
+  width: 32%;
+}
+.four-across .breakout-box {
+  width: 23.5%;
+}
+
+@media (max-width: 740px) {
+  .breakout-module {
+    border-bottom: 1px solid #323232;
+    border-top: 1px solid #323232;
+    margin: 4.8rem auto;
+    padding: 2.4rem 0;
+  }
+  .breakout-module img {
+    float: left;
+    margin-right: 1rem;
+    width: 50%;
+  }
+  .two-across .breakout-box, .three-across .breakout-box, .four-across .breakout-box {
+    margin-bottom: 1.2rem;
+    float: none;
+    width: 100%;
+  }
+  .breakout-box:last-child {
+    margin-bottom: 0;
+  }
+}

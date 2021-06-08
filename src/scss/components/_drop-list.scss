@@ -1,0 +1,58 @@
+/*
+-------------------------------------------
+DROP DOWN LIST
+-------------------------------------------
+*/
+
+.fa-twitter{
+  color: #5CA3E6;
+  cursor: pointer;
+  transition: color .25s ease-out;
+}
+.drop-list .drop-hed {
+  cursor: pointer;
+}
+.drop-list .drop-item {
+  background-color: $black235;
+  border-radius: 2px;
+  margin-bottom: .6rem;
+  padding: 1rem;
+}
+.drop-list .drop-hed span.cardinal {
+  background-color: #A8A8A8;
+  border-radius: 50%;
+  color: white;
+  float: left;
+  font-size: 1.6rem;
+  height: 2.4rem;
+  letter-spacing: -1px;
+  line-height: 2.4rem;
+  margin-right: 1rem;
+  text-align: center;
+  text-indent: -1px;
+  width: 2.4rem;
+}
+.drop-list .drop-hed h5 {
+  float: left;
+  margin-bottom: 0;
+  width: calc(100% - 7rem);
+}
+.drop-list .drop-hed .fa{
+  color: #5CA3E6;
+  float: right;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  margin:0 1rem;
+}
+.drop-list .drop-text {
+  display: none;
+  padding: 1rem 4rem 1rem 3.4rem;
+}
+.drop-list .expanded-text {
+  display: block;
+}
+.drop-list p.drop-text {
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}

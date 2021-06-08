@@ -1,0 +1,32 @@
+{
+  "id": "73293394307",
+  "name": "tuition-tracker",
+  "pageTitle": "<Title>",
+  "shareTitle": "<Title>",
+  "shareText": "<Text>",
+  "tweetText": "<Text>",
+  "publishYear": 2018,
+  "publishDate": "2018-04-30T00:00:00Z",
+  "url": "https://interactives.dallasnews.com/2018/tuition-tracker/",
+  "authors": [
+    "<Author1>",
+    "<Author2>"
+  ],
+  "desk": "<Desk>",
+  "section": "<Section>",
+  "keywords": [
+    "interactives",
+    "dallas",
+    "dallas news",
+    "dfw news",
+    "dallas newspaper",
+    "dallas morning news",
+    "dallas morning news newspaper"
+  ],
+  "imgURL": "https://interactives.dallasnews.com/2018/tuition-tracker/undefined",
+  "imgWidth": "<Width - w/out \"px\">",
+  "imgHeight": "<Height - w/out \"px\">",
+  "sectionTwitter": "<handle - w/out \"@\">",
+  "authorTwitter": "<handle - w/out \"@\">",
+  "authorFBProfile": "<Url for author FB profile. Leave empty string if none>"
+}

@@ -1,0 +1,38 @@
+/*
+-------------------------------------------
+PULLQUOTES
+-------------------------------------------
+*/
+
+@import '_side-blocks';
+
+.pullquote {
+  border-top: 1px solid #323232;
+  border-bottom: 1px solid #323232;
+  font-size: 2.4rem;
+  line-height: 4.8rem;
+  padding: 2.4rem 0;
+  text-align: left;
+}
+.pullquote blockquote {
+  margin-bottom: 2.4rem;
+  font-family: "PT Serif", Georgia, Times, serif;
+  color: #212121;
+}
+.pullquote p.attribution {
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
+  color: $black66;
+  text-align: right;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+}
+.pullquote p.attribution:before {
+  content: '— ';
+}
+
+@media (max-width: 600px) {
+  .pullquote {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+}

@@ -1,0 +1,74 @@
+/*
+-------------------------------------------
+SLIDESHOWS
+-------------------------------------------
+*/
+
+
+.slideshow {
+  margin: 4.8rem auto;
+  max-width: 1000px;
+}
+.slideshow h5 {
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
+  color: $black66;
+}
+.slide-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.slide {
+  float: left;
+  left: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  width: 100%;
+}
+.slide-button {
+  background-color: white;
+  cursor: pointer;
+  display: block;
+  height: 5rem;
+  opacity: .8;
+  position: absolute;
+  top: 50%;
+  -webkit-transition: opacity .3s ease-out;
+  -moz-transition: opacity .3s ease-out;
+  -o-transition: opacity .3s ease-out;
+  transition: opacity .3s ease-out;
+  width: 5rem;
+}
+.slide-button:hover {
+  opacity: 1;
+}
+.next-button {
+  right: 0;
+}
+.slide img {
+  width: 100%;
+}
+.current {
+  margin-left: 0;
+  opacity: 1;
+  position: relative;
+}
+.pre-slide {
+  margin-left: 100%;
+  opacity: 1;
+}
+.post-slide {
+  margin-left: -100%;
+  opacity: 0;
+}
+
+@media (max-width: 600px) {
+  .slide-button {
+    width: 3rem;
+    height: 3rem;
+  }
+}

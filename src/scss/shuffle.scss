@@ -1,0 +1,100 @@
+@import './variables.scss';
+
+#shuffle-container {
+  background-color:white;
+
+}
+.school-group-container {
+  width:20px!important;
+}
+#shuffle {
+  background-color:rgba(25,25,112,.05);
+  border-radius:5px;
+  position: relative;
+  width: 130%;
+  padding:0 10px 5px; 
+  max-width: 300px;
+  margin: auto;
+
+
+  header {
+    position: relative;
+    padding: 16px 0;
+    height: 125px;
+    margin: 4px 0;
+  }
+
+  .list-item {
+    position: relative;
+    margin: 0 6px 12px 6px;
+    padding: 12px;
+    list-style-type: none;
+
+
+    &:hover button {
+      display: block;
+    }
+
+    &.list {
+      display: block;
+
+      button {
+        top: 0;
+        right: 10px;
+        bottom: 0;
+        margin: auto;
+        width: 36px;
+        height: 36px;
+        background: $white;
+        border: 0;
+        border-radius: 2px;
+        color: $darkgray;
+        font-size: 20px;
+      }
+    }
+
+    &.grid {
+      display: inline-block;
+
+      button {
+        top: 0;
+        right: 0;
+        font-size: 14px;
+        background: transparent;
+        border: 0;
+        color: $fuscia;
+      }
+    }
+    a {
+      color:white;
+      text-decoration:none;
+    }
+    button {
+      display: none;
+      position: absolute;
+    }
+  }
+}
+
+#shuffle .bootstrap-override h3 {
+    font-family:'Lato';
+    font-size:16px;
+    line-height:18px;
+  }
+#shuffle .bootstrap-override p {
+  padding:2px 12px;
+  font-size:14px;
+  line-height:16px;
+}
+#shuffle .bootstrap-override h4 {
+    padding:2px 12px;
+    font-family:'Lato';
+    font-size:20px;
+    font-weight:700;
+  }
+#shuffle .bootstrap-override h5 {
+    font-family:'Lato';
+    font-size:16px;
+    font-weight:700;
+    color:white;
+  }
